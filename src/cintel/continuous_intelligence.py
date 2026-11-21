@@ -1,7 +1,7 @@
 """continuous_intelligence.py - Project script (example).
 
-Author: Your Name Here
-Date: 2026-mm-dd
+Author: Sandra Otubushin
+Date: 2026-11
 
 System Metrics Data
 
