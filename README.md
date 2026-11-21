@@ -13,9 +13,9 @@
 
 ## Project Overview
 
-Author: Denise Case
+Author: Sandra Otubushin
 
-Date: 2026 October
+Date: 2026-11-21
 
 This project brings together techniques introduced
 throughout the Continuous Intelligence course.
