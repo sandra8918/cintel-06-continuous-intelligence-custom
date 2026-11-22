@@ -139,7 +139,8 @@ jobs:
           path: site
         # WHY: Packages the built static site for the deploy-pages action.
         # OBS: path must match the output directory verified in D2.
-
+      - name: D3.5) Wait for Pages artifact
+        run: sleep 30
       - name: D4) Deploy to GitHub Pages
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
         # WHY: Publishes the uploaded artifact to GitHub Pages.
