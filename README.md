@@ -233,3 +233,19 @@ system more sensitive to error-rate changes.
 
 I learned that threshold selection directly affects monitoring results
 and should reflect the operational requirements of the system.
+
+## Custom Application
+
+This project includes a custom project-request performance monitor using
+the synthetic dataset in `data/project_metrics.csv`.
+
+In this dataset:
+
+- `requests` represents project requests.
+- `errors` represents overdue requests.
+- `total_latency_ms` represents total response time.
+
+Run the custom application from the project root:
+
+```shell
+uv run python -m cintel.continuous_intelligence
