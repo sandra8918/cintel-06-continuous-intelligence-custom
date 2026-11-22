@@ -144,3 +144,55 @@ and sufficient detail to investigate anomalous conditions.
 - [Professional Python Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Professional Python Project Explainer](https://pup-pack.github.io/professional-python-project-explainer/).
 - [Suggested Datasets](https://denisecase.github.io/pro-analytics-02/reference/datasets/cintel/)
+
+## Custom Application: Project Request Performance Monitoring
+
+### Question
+
+Can project request data identify when workload and response time indicate
+project-performance problems?
+
+### Data
+
+I created a synthetic dataset in
+`data/project_metrics.csv`. The data represents project requests,
+overdue requests, and total response time.
+
+In this application, `requests` represents project requests,
+`errors` represents overdue requests, and `total_latency_ms` represents
+total response time.
+
+### Process and Tools
+
+The Python pipeline uses Polars to calculate average requests, average
+overdue requests, overdue-request rate, and average response time.
+It compares the results with monitoring thresholds and classifies the
+project performance as STABLE or DEGRADED.
+
+The project uses Python, Polars, uv, GitHub, and Zensical.
+
+### Results
+
+| Metric | Average | Threshold | Result |
+|---|---:|---:|---|
+| Project requests | 111.5 | Informational | Workload increased across the observations |
+| Overdue-request rate | 2.43% | 2.00% | Exceeded the threshold |
+| Average response time | 24.34 ms | 40.00 ms | Within the threshold |
+| Overall project state | DEGRADED | — | Overdue-request rate requires attention |
+
+### Interpretation
+
+The project was classified as DEGRADED because the average overdue-request
+rate of 2.43% exceeded the 2% threshold. Average response time remained
+below the 40-millisecond threshold, so response speed was not the main
+cause of the classification.
+
+This shows how continuous intelligence can identify a project-performance
+issue even when response time remains acceptable.
+
+### Limitation and Next Steps
+
+The data is synthetic and does not include task priority, project
+complexity, seasonal workload, or timestamps. If I continued this project,
+I would collect real project data, add priority and due-date fields, and
+monitor performance over time.
