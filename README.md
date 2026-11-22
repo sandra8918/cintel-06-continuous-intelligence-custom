@@ -249,3 +249,4 @@ Run the custom application from the project root:
 
 ```shell
 uv run python -m cintel.continuous_intelligence
+Last verified: November 2026.
