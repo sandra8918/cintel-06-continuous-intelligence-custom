@@ -217,3 +217,19 @@ testing, documentation, and code quality.
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
+-
+## D2 Experiment
+
+I changed the maximum error-rate threshold in
+`src/cintel/continuous_intelligence.py` from `0.05` to `0.02`.
+
+I predicted that the system classification would change from STABLE
+to DEGRADED because the average error rate is approximately 2.65%,
+which is higher than the new 2% threshold.
+
+After rerunning the pipeline, the system state changed to DEGRADED.
+This experiment showed that lowering a monitoring threshold makes the
+system more sensitive to error-rate changes.
+
+I learned that threshold selection directly affects monitoring results
+and should reflect the operational requirements of the system.

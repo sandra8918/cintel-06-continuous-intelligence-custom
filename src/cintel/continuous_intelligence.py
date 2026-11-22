@@ -88,7 +88,7 @@ OUTPUT_FILE: Final[Path] = ARTIFACTS_DIR / "system_assessment.csv"
 # Analysts need to know their data and
 # choose thresholds that make sense for their specific use case.
 
-MAX_ERROR_RATE: Final[float] = 0.05
+MAX_ERROR_RATE: Final[float] = 0.02
 MAX_AVG_LATENCY: Final[float] = 40.0
 
 # === DEFINE THE MAIN FUNCTION ===
